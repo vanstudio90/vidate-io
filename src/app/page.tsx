@@ -1,19 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
-            <svg
-              className="w-4 h-4 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
-            </svg>
-          </div>
+          <Image src="/logo.png" alt="Vidate" width={36} height={36} className="rounded-lg" />
           <span className="text-xl font-black tracking-tight text-viddy-dark">
             Vidate
           </span>
@@ -103,15 +96,7 @@ function Hero() {
               <div className="absolute -left-8 top-8 w-[260px] h-[520px] rounded-[3rem] gradient-bg opacity-20 rotate-[-8deg]" />
               <div className="relative w-[280px] h-[560px] rounded-[3rem] gradient-bg p-[3px] shadow-2xl shadow-viddy-pink/20">
                 <div className="w-full h-full rounded-[2.8rem] bg-white flex flex-col items-center justify-center p-8">
-                  <div className="w-20 h-20 rounded-full gradient-bg flex items-center justify-center mb-6">
-                    <svg
-                      className="w-10 h-10 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
-                    </svg>
-                  </div>
+                  <Image src="/logo.png" alt="Vidate" width={80} height={80} className="rounded-2xl mb-6 shadow-lg" />
                   <p className="text-2xl font-black text-viddy-dark tracking-tight">
                     Vidate
                   </p>
@@ -348,11 +333,7 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
-                </svg>
-              </div>
+              <Image src="/logo.png" alt="Vidate" width={36} height={36} className="rounded-lg" />
               <span className="text-xl font-black tracking-tight">Vidate</span>
             </div>
             <p className="text-gray-400 max-w-sm leading-relaxed">
