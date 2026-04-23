@@ -3,9 +3,10 @@
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #0a0a0a;
-  --color-viddy-pink: #F15079;
-  --color-viddy-hot-pink: #DA428F;
-  --color-viddy-purple: #B639A3;
+  --color-viddy-pink: #F45474;
+  --color-viddy-hot-pink: #ED4C7E;
+  --color-viddy-magenta: #C13C9F;
+  --color-viddy-purple: #B137A6;
   --color-viddy-light: #FDF2F6;
   --color-viddy-dark: #1A1A2E;
   --font-sans: var(--font-geist-sans);
@@ -17,17 +18,17 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #F15079, #DA428F, #B639A3);
+  background: linear-gradient(135deg, #F45474, #ED4C7E, #C13C9F, #B137A6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #F15079, #DA428F, #B639A3);
+  background: linear-gradient(135deg, #F45474, #ED4C7E, #C13C9F, #B137A6);
 }
 
 .gradient-bg-subtle {
-  background: linear-gradient(135deg, #F15079 0%, #DA428F 50%, #B639A3 100%);
+  background: linear-gradient(135deg, #F45474 0%, #ED4C7E 33%, #C13C9F 66%, #B137A6 100%);
   opacity: 0.05;
 }
