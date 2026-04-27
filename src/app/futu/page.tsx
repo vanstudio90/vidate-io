@@ -13,6 +13,9 @@ interface Profile {
   created_at: string;
   last_active: string;
   onboarding_completed: boolean;
+  email: string | null;
+  phone: string | null;
+  provider: string | null;
 }
 
 interface Video {
@@ -34,8 +37,19 @@ interface Report {
   created_at: string;
 }
 
+interface AuthInfo {
+  email: string | null;
+  phone: string | null;
+  provider: string | null;
+  providers: string[] | null;
+  email_confirmed_at: string | null;
+  last_sign_in_at: string | null;
+  created_at: string | null;
+}
+
 interface UserDetail {
   profile: Record<string, unknown>;
+  auth: AuthInfo | null;
   videos: Video[];
   reports: Report[];
 }
@@ -111,6 +125,7 @@ export default function AdminPage() {
   const filtered = users.filter(
     (u) =>
       (u.display_name || "").toLowerCase().includes(search.toLowerCase()) ||
+      (u.email || "").toLowerCase().includes(search.toLowerCase()) ||
       (u.city || "").toLowerCase().includes(search.toLowerCase()) ||
       u.id.includes(search)
   );
@@ -176,8 +191,14 @@ export default function AdminPage() {
                     )}
                   </div>
                 </div>
-                <div className="text-xs text-gray-500 mt-1">
+                {u.email && (
+                  <div className="text-xs text-gray-400 mt-0.5 truncate">{u.email}</div>
+                )}
+                <div className="text-xs text-gray-500 mt-0.5">
                   {u.city || "No location"} · {u.gender} · {new Date(u.created_at).toLocaleDateString()}
+                  {u.provider && u.provider !== "email" && (
+                    <span className="ml-1 text-blue-400">· {u.provider}</span>
+                  )}
                 </div>
               </div>
             ))}
@@ -202,6 +223,39 @@ export default function AdminPage() {
                   {deleting === selectedUserId ? "Deleting..." : "Delete User"}
                 </button>
               </div>
+
+              {/* Auth Info */}
+              {selectedUser.auth && (
+                <div className="bg-gray-900 rounded-xl p-5 mb-6">
+                  <h3 className="text-lg font-semibold mb-3 text-pink-400">Account</h3>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">email</span>
+                      <span className="text-gray-200">{selectedUser.auth.email || "—"}</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">phone</span>
+                      <span className="text-gray-200">{selectedUser.auth.phone || "—"}</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">provider</span>
+                      <span className="text-gray-200">{selectedUser.auth.providers?.join(", ") || "—"}</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">email_confirmed</span>
+                      <span className="text-gray-200">{selectedUser.auth.email_confirmed_at ? new Date(selectedUser.auth.email_confirmed_at).toLocaleString() : "No"}</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">last_sign_in</span>
+                      <span className="text-gray-200">{selectedUser.auth.last_sign_in_at ? new Date(selectedUser.auth.last_sign_in_at).toLocaleString() : "—"}</span>
+                    </div>
+                    <div className="flex">
+                      <span className="text-gray-500 w-48 shrink-0">auth_created</span>
+                      <span className="text-gray-200">{selectedUser.auth.created_at ? new Date(selectedUser.auth.created_at).toLocaleString() : "—"}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Profile Info */}
               <div className="bg-gray-900 rounded-xl p-5 mb-6">
