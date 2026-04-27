@@ -4,9 +4,14 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const { searchParams, pathname } = request.nextUrl;
   const message = searchParams.get("message");
+  const error = searchParams.get("error");
+  const errorDescription = searchParams.get("error_description");
+  const type = searchParams.get("type");
 
-  // Redirect Supabase auth callbacks with ?message= to /auth/confirm
-  if (pathname === "/" && message) {
+  // Redirect any Supabase auth callback to /auth/confirm
+  const hasAuthParams = message || error || type === "email_change" || type === "signup" || type === "recovery" || type === "magiclink";
+
+  if (hasAuthParams) {
     const url = request.nextUrl.clone();
     url.pathname = "/auth/confirm";
     return NextResponse.redirect(url);
@@ -16,5 +21,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/"],
+  matcher: ["/((?!_next|api|futu|admin|favicon|logo|icon|apple-icon).*)"],
 };
