@@ -8,9 +8,10 @@ export function middleware(request: NextRequest) {
   const errorDescription = searchParams.get("error_description");
   const type = searchParams.get("type");
 
-  // PKCE code exchange — route to API handler
+  // Auth code/token exchange — route to API handler
   const code = searchParams.get("code");
-  if (code && pathname === "/") {
+  const tokenHash = searchParams.get("token_hash");
+  if ((code || tokenHash) && pathname !== "/api/auth/callback") {
     const url = request.nextUrl.clone();
     url.pathname = "/api/auth/callback";
     return NextResponse.redirect(url);
