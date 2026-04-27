@@ -341,12 +341,12 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Company</h4>
+            <h4 className="font-bold mb-4">Safety</h4>
             <div className="space-y-3">
-              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors text-sm">About</Link>
-              <Link href="/careers" className="block text-gray-400 hover:text-white transition-colors text-sm">Careers</Link>
-              <Link href="/press" className="block text-gray-400 hover:text-white transition-colors text-sm">Press</Link>
-              <Link href="/contact" className="block text-gray-400 hover:text-white transition-colors text-sm">Contact</Link>
+              <Link href="/community-guidelines" className="block text-gray-400 hover:text-white transition-colors text-sm">Community Guidelines</Link>
+              <Link href="/safety-tips" className="block text-gray-400 hover:text-white transition-colors text-sm">Safety Tips</Link>
+              <Link href="/safety-center" className="block text-gray-400 hover:text-white transition-colors text-sm">Safety Center</Link>
+              <Link href="/help" className="block text-gray-400 hover:text-white transition-colors text-sm">Help & Support</Link>
             </div>
           </div>
           <div>
@@ -354,8 +354,8 @@ function Footer() {
             <div className="space-y-3">
               <Link href="/privacy" className="block text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</Link>
               <Link href="/terms" className="block text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</Link>
-              <Link href="/safety-tips" className="block text-gray-400 hover:text-white transition-colors text-sm">Safety Tips</Link>
-              <Link href="/cookies" className="block text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</Link>
+              <Link href="/cookie-policy" className="block text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</Link>
+              <Link href="/accessibility" className="block text-gray-400 hover:text-white transition-colors text-sm">Accessibility</Link>
             </div>
           </div>
         </div>
