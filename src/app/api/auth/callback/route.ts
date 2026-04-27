@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
         );
       }
 
-      const newEmail = userData.user.new_email || userData.user.email_change;
+      const newEmail = userData.user.new_email || (userData.user as Record<string, unknown>).email_change as string | undefined;
 
       if (newEmail) {
         // Confirm the email change via admin API
