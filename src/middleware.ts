@@ -8,13 +8,15 @@ export function middleware(request: NextRequest) {
   const errorDescription = searchParams.get("error_description");
   const type = searchParams.get("type");
 
-  // Redirect any Supabase auth callback to /auth/confirm
-  const hasAuthParams = message || error || type === "email_change" || type === "signup" || type === "recovery" || type === "magiclink";
+  // Redirect any Supabase auth callback to /auth/confirm (but not if already there)
+  if (pathname !== "/auth/confirm") {
+    const hasAuthParams = message || error || type === "email_change" || type === "signup" || type === "recovery" || type === "magiclink";
 
-  if (hasAuthParams) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/auth/confirm";
-    return NextResponse.redirect(url);
+    if (hasAuthParams) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/auth/confirm";
+      return NextResponse.redirect(url);
+    }
   }
 
   return NextResponse.next();
