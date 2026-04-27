@@ -46,7 +46,10 @@ export async function DELETE(req: NextRequest) {
   await supabaseAdmin.from("reports").delete().or(`reporter_id.eq.${userId},reported_id.eq.${userId}`);
   await supabaseAdmin.from("profile_videos").delete().eq("user_id", userId);
   const { error } = await supabaseAdmin.from("profiles").delete().eq("id", userId);
-
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  // Also delete the auth user so the email is freed up
+  await supabaseAdmin.auth.admin.deleteUser(userId);
+
   return NextResponse.json({ ok: true });
 }
