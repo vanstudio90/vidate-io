@@ -75,7 +75,8 @@ export async function GET(request: NextRequest) {
         );
       }
 
-      const newEmail = userData.user.new_email || (userData.user as Record<string, unknown>).email_change as string | undefined;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const newEmail = userData.user.new_email || (userData.user as any).email_change;
 
       if (newEmail) {
         // Confirm the email change via admin API
