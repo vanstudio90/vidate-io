@@ -8,6 +8,14 @@ export function middleware(request: NextRequest) {
   const errorDescription = searchParams.get("error_description");
   const type = searchParams.get("type");
 
+  // PKCE code exchange — route to API handler
+  const code = searchParams.get("code");
+  if (code && pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/api/auth/callback";
+    return NextResponse.redirect(url);
+  }
+
   // Redirect any Supabase auth callback to /auth/confirm (but not if already there)
   if (pathname !== "/auth/confirm") {
     const hasAuthParams = message || error || type === "email_change" || type === "signup" || type === "recovery" || type === "magiclink";
