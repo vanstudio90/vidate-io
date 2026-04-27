@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
               <li>Request a copy of your data in a portable format</li>
               <li>Withdraw consent where processing is based on consent</li>
             </ul>
-            <p className="mt-4">To exercise any of these rights, contact us at <a href="mailto:privacy@vidate.io" className="text-viddy-hot-pink hover:underline">privacy@vidate.io</a>.</p>
+            <p className="mt-4">To exercise any of these rights, contact us at <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a>.</p>
           </section>
 
           <section>
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">11. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or our data practices, contact us at:</p>
-            <p className="mt-2"><strong>Email:</strong> <a href="mailto:privacy@vidate.io" className="text-viddy-hot-pink hover:underline">privacy@vidate.io</a></p>
+            <p className="mt-2"><strong>Email:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
           </section>
         </div>
       </main>

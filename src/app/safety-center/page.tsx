@@ -82,7 +82,7 @@ export default function SafetyCenter() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">Contact Our Safety Team</h2>
             <p>If you&apos;re experiencing a safety concern or need immediate assistance, reach out to us:</p>
-            <p className="mt-2"><strong>Email:</strong> <a href="mailto:safety@vidate.io" className="text-viddy-hot-pink hover:underline">safety@vidate.io</a></p>
+            <p className="mt-2"><strong>Email:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
             <p className="mt-4 text-sm text-gray-500">If you are in immediate danger, please contact your local emergency services (911 in the US).</p>
           </section>
         </div>

@@ -131,7 +131,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">18. Contact Us</h2>
             <p>For questions about these Terms, reach out to us at:</p>
-            <p className="mt-2"><strong>Email:</strong> <a href="mailto:legal@vidate.io" className="text-viddy-hot-pink hover:underline">legal@vidate.io</a></p>
+            <p className="mt-2"><strong>Email:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
           </section>
         </div>
       </main>

@@ -89,9 +89,9 @@ export default function HelpSupport() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">Contact Support</h2>
             <p>Our support team is here to help. Reach out to us for any questions, issues, or feedback:</p>
-            <p className="mt-4"><strong>General Support:</strong> <a href="mailto:support@vidate.io" className="text-viddy-hot-pink hover:underline">support@vidate.io</a></p>
-            <p className="mt-2"><strong>Safety Concerns:</strong> <a href="mailto:safety@vidate.io" className="text-viddy-hot-pink hover:underline">safety@vidate.io</a></p>
-            <p className="mt-2"><strong>Privacy Questions:</strong> <a href="mailto:privacy@vidate.io" className="text-viddy-hot-pink hover:underline">privacy@vidate.io</a></p>
+            <p className="mt-4"><strong>General Support:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
+            <p className="mt-2"><strong>Safety Concerns:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
+            <p className="mt-2"><strong>Privacy Questions:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
             <p className="mt-6 text-sm text-gray-500">We aim to respond to all inquiries within 24-48 hours.</p>
           </section>
         </div>

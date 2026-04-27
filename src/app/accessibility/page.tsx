@@ -48,7 +48,7 @@ export default function Accessibility() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">Feedback</h2>
             <p>We welcome your feedback on the accessibility of Vidate. If you encounter accessibility barriers or have suggestions for improvement, please contact us:</p>
-            <p className="mt-2"><strong>Email:</strong> <a href="mailto:accessibility@vidate.io" className="text-viddy-hot-pink hover:underline">accessibility@vidate.io</a></p>
+            <p className="mt-2"><strong>Email:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
             <p className="mt-4">We take accessibility feedback seriously and will do our best to address concerns promptly.</p>
           </section>
         </div>

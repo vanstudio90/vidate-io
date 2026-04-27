@@ -70,7 +70,7 @@ export default function CookiePolicy() {
           <section>
             <h2 className="text-2xl font-bold text-viddy-dark mt-10 mb-4">Contact Us</h2>
             <p>If you have questions about our use of cookies, contact us at:</p>
-            <p className="mt-2"><strong>Email:</strong> <a href="mailto:privacy@vidate.io" className="text-viddy-hot-pink hover:underline">privacy@vidate.io</a></p>
+            <p className="mt-2"><strong>Email:</strong> <a href="mailto:love@vidate.io" className="text-viddy-hot-pink hover:underline">love@vidate.io</a></p>
           </section>
         </div>
       </main>
