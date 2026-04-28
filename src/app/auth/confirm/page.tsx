@@ -47,8 +47,15 @@ export default async function ConfirmPage({
                 </svg>
               </div>
               <h1 className="text-2xl font-bold text-viddy-dark mb-3">All Set!</h1>
-              <p className="text-gray-500 mb-8">{message}</p>
-              <p className="text-sm text-gray-400">You can close this page and return to the Vidate app.</p>
+              <p className="text-gray-500 mb-6">{message}</p>
+              <a
+                href="com.vidate.app://auth/verified"
+                className="inline-block w-full py-3 px-6 rounded-full text-white font-semibold text-center mb-4"
+                style={{ background: "linear-gradient(135deg, #F45474, #C13C9F)" }}
+              >
+                Open Vidate
+              </a>
+              <p className="text-sm text-gray-400">Tap the button above to return to the app.</p>
             </>
           )}
         </div>
