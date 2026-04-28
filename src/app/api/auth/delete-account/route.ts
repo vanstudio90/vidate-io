@@ -8,18 +8,30 @@ const supabase = createClient(
 );
 
 export async function POST(req: NextRequest) {
+  // Verify authorization
+  const authHeader = req.headers.get("authorization");
+  if (!authHeader?.startsWith("Bearer ")) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const token = authHeader.replace("Bearer ", "");
+
+  // Verify the token and get the authenticated user
+  const { data: tokenUser, error: tokenError } = await supabase.auth.getUser(token);
+  if (tokenError || !tokenUser?.user) {
+    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
+
   const { user_id } = await req.json();
   if (!user_id) {
     return NextResponse.json({ error: "user_id is required" }, { status: 400 });
   }
 
-  // Verify the user exists
-  const { data: user, error: fetchError } = await supabase.auth.admin.getUserById(user_id);
-  if (fetchError || !user?.user) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  // Ensure the authenticated user can only delete their own account
+  if (tokenUser.user.id !== user_id) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  // Delete the auth user (cascade will handle profile data if RLS/triggers are set up)
+  // Delete the auth user
   const { error: deleteError } = await supabase.auth.admin.deleteUser(user_id);
   if (deleteError) {
     return NextResponse.json({ error: deleteError.message }, { status: 500 });
